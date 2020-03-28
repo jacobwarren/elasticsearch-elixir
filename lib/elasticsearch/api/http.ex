@@ -63,7 +63,7 @@ defmodule Elasticsearch.API.HTTP do
 
   # Produces request headers for the request, based on the configuration
   defp headers(config) do
-    headers = [{"Content-Type", "application/json"}] ++ Map.get(config, :default_headers, [])
+    headers = [{"Content-Type", "application/x-ndjson"}] ++ Map.get(config, :default_headers, [])
 
     credentials = http_basic_credentials(config)
 
